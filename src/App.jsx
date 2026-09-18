@@ -32,6 +32,7 @@ export default function App() {
               image={member.image}
               name={member.name}
               role={member.role}
+              group={activeTab}
             />
           ))}
         {activeTab === "GFRIEND" &&
@@ -41,6 +42,7 @@ export default function App() {
               image={member.image}
               name={member.name}
               role={member.role}
+              group={activeTab}
             />
           ))}
         {activeTab === "NMIXX" &&
@@ -50,6 +52,7 @@ export default function App() {
               image={member.image}
               name={member.name}
               role={member.role}
+              group={activeTab}
             />
           ))}
       </div>
