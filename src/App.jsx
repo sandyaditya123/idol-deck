@@ -5,7 +5,7 @@ import { IVE, GFRIEND, NMIXX } from "./data/groups";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("IVE");
-  const [selectedMember, setSelecterdMember] = useState(null);
+  const [selectedMember, setSelectedMember] = useState(null);
 
   const buttons = ["IVE", "GFRIEND", "NMIXX"];
 
@@ -34,7 +34,7 @@ export default function App() {
               image={member.image}
               name={member.name}
               role={member.role}
-              onClick={() => setSelecterdMember(member)}
+              onClick={() => setSelectedMember(member)}
             />
           ))}
         {activeTab === "GFRIEND" &&
@@ -44,7 +44,7 @@ export default function App() {
               image={member.image}
               name={member.name}
               role={member.role}
-              onClick={() => setSelecterdMember(member)}
+              onClick={() => setSelectedMember(member)}
             />
           ))}
         {activeTab === "NMIXX" &&
@@ -54,13 +54,13 @@ export default function App() {
               image={member.image}
               name={member.name}
               role={member.role}
-              onClick={() => setSelecterdMember(member)}
+              onClick={() => setSelectedMember(member)}
             />
           ))}
       </div>
       <Modal
         isOpen={selectedMember}
-        onClose={() => setSelecterdMember(null)}
+        onClose={() => setSelectedMember(null)}
         group={activeTab}
         name={selectedMember?.name}
         role={selectedMember?.role}
