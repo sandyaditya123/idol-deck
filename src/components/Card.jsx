@@ -5,7 +5,6 @@ import { Heart } from "lucide-react";
 const DEFAULT_IMAGE = defaultImage1;
 
 export default function Card({ image, name, role, onClick }) {
-  const [img, setImg] = useState(image || DEFAULT_IMAGE);
   const [isLiked, setIsLiked] = useState(false);
 
   function handleClick(e) {
@@ -21,9 +20,11 @@ export default function Card({ image, name, role, onClick }) {
       <div className="overflow-hidden">
         <img
           className="transition-transform duration-300 group-hover:scale-110"
-          src={img}
+          src={image || DEFAULT_IMAGE}
           alt={name}
-          onError={() => setImg(DEFAULT_IMAGE)}
+          onError={(e) => {
+            e.currentTarget.src = DEFAULT_IMAGE;
+          }}
         />
       </div>
 
